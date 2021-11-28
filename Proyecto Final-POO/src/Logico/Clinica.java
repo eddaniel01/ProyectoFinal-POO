@@ -59,5 +59,9 @@ public class Clinica {
 	public void setMisVacunas(ArrayList<Vacuna> misVacunas) {
 		this.misVacunas = misVacunas;
 	}
+	
+	public void RegPaciente(Paciente paciente) {
+		misPacientes.add(paciente);
+	}
 
 }
