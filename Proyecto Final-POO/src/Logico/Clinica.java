@@ -64,4 +64,50 @@ public class Clinica {
 		misPacientes.add(paciente);
 	}
 
+	//Control de enfermedades bajo vigilancia
+		private Enfermedad buscarEnfermedad(String codigoEnfermedad) {
+			Enfermedad enfermedad = null;
+			boolean encontrado = false;
+			int i = 0;
+			while (!encontrado && i <misEnfermedades.size()) {
+				if(misEnfermedades.get(i).getCodigoEnfermedad().equalsIgnoreCase(codigoEnfermedad))
+				{
+					enfermedad = misEnfermedades.get(i);
+					encontrado = true;
+				}
+				i++;
+			}
+			return enfermedad;
+			} 
+		
+		
+		//Control de vacunas
+		
+		private Vacuna buscarVacuna(String codigoVacuna) {
+			Vacuna vacuna = null;
+			boolean encontrado = false;
+			int i = 0;
+			while (!encontrado && i <misVacunas.size()) {
+				if(misVacunas.get(i).getCodigoVacunacion().equalsIgnoreCase(codigoVacuna))
+				{
+					vacuna = misVacunas.get(i);
+					encontrado = true;
+				}
+				i++;
+			}
+			return vacuna;
+			} 
+		
+		private int conteoVacuna(String codigoVacuna) {
+			
+			int vacunaCont = 0;
+			
+			for (Vacuna vacuna : misVacunas) {
+				if(vacuna.getCodigoVacunacion().equalsIgnoreCase(codigoVacuna)) {
+					vacunaCont++;
+				}
+			}
+			return vacunaCont;
+		}
+	
 }
